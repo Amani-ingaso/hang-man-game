@@ -5,7 +5,7 @@ A simple and fun Hangman game built with HTML, CSS, and JavaScript — playable 
 
 ## 🚀 Live Demo
 
-Play it here: https://your-username.github.io/hangman-game/
+Play it here: https://amani-ingaso.github.io/hang-man-game/
 
 ## 🛠️ Features
 
@@ -31,4 +31,4 @@ Play it here: https://your-username.github.io/hangman-game/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Amani-ingaso/hangman-game.git
+   git clone https://amani-ingaso.github.io/hang-man-game/
