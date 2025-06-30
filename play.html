@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Hangman Game</title>
+  <link rel="stylesheet" href="play.css" />
+</head>
+<body>
+<div class="container">
+  <h1>🎯 Hangman Game</h1>
+  <button id="toggle-theme">🌙 Toggle Dark Mode</button>
+
+  <div id="setup">
+    <label for="mode">Select Mode:</label>
+    <select id="mode">
+      <option value="single">Single Player</option>
+      <option value="two">Two Player</option>
+    </select>
+
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <label for="daily-challenge">
+      <input type="checkbox" id="daily-challenge" />
+      Daily Challenge Mode
+    </label>
+
+    <div id="category-section">
+      <label for="category">Choose a category:</label>
+      <select id="category">
+        <option value="Animals">Animals</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Countries">Countries</option>
+        <option value="Movies">Movies</option>
+        <option value="Colors">Colors</option>
+        <option value="Sports">Sports</option>
+        <option value="Instruments">Instruments</option>
+        <option value="Jobs">Jobs</option>
+        <option value="Space">Space</option>
+        <option value="Custom">Custom</option>
+      </select>
+    </div>
+
+    <div id="custom-words-section" style="display: none;">
+      <label for="custom-words">Enter custom words (comma-separated):</label>
+      <textarea id="custom-words" rows="3"></textarea>
+    </div>
+
+    <div id="word-entry">
+      <label for="secret-word">Player 1: Enter a secret word</label>
+      <input type="password" id="secret-word" />
+      <label for="hint">Hint (optional):</label>
+      <input type="text" id="hint" />
+    </div>
+
+    <button id="start-game">Start Game</button>
+  </div>
+
+  <div id="game" style="display: none;">
+    <canvas id="hangman-canvas" width="200" height="250" style="margin: 20px auto; display: block;"></canvas>
+    <p id="category-hint"></p>
+    <p id="hint-display"></p>
+    <p id="word-display" class="reveal"></p>
+    <p>Incorrect guesses: <span id="wrong-letters"></span></p>
+    <input type="text" id="letter-input" maxlength="1" />
+    <button id="guess-button">Guess</button>
+    <p id="message"></p>
+    <button id="restart-button" style="display: none;">Restart Game</button>
+    <p id="timer">⏱️ Time left: <span id="time-left">60</span>s</p>
+    <p id="scoreboard">🏆 Player 1: <span id="score1">0</span> | Player 2: <span id="score2">0</span></p>
+
+    <div id="audio-controls" style="margin-top: 20px;">
+      <label for="volume-slider">🔊 Volume:</label>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
+      <button id="mute-toggle">Mute</button>
+    </div>
+
+    <div id="confetti"></div>
+    <div id="leaderboard">
+      <h2>🏆 Leaderboard</h2>
+      <ul id="scores"></ul>
+    </div>
+
+    <audio id="sound-correct" src="correct.mp3"></audio>
+    <audio id="sound-wrong" src="wrong.mp3"></audio>
+    <audio id="sound-win" src="victory.mp3"></audio>
+    <audio id="sound-lose" src="you lose.mp3"></audio>
+    <audio id="background-music" src="little-do-you-know-beat-cry-sound-effect-325692.mp3" loop autoplay></audio>
+  </div>
+</div>
+
+<script src="play.js"></script>
+</body>
+</html>
+
